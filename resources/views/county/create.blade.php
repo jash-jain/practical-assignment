@@ -33,7 +33,7 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <button type="cancle" class="btn btn-secondary">Back</button>
+                        <button type="button" class=" back btn btn-secondary">Back</button>
                     </form>
                 </div>
             </div>
@@ -46,11 +46,14 @@
 @section('custom-js')
 <script>
 
+$('.back').click(function () {
+    window.location.href="{{route('county.index')}}"
+})
 
     $('#ajaxForm').on('submit',function(event){
         event.preventDefault();
         var method = $(this).attr('method');
-        
+
         var url = $(this).attr('action');
         var name = $('#name').val();
         var state = $('#state_id').val();

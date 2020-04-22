@@ -44,7 +44,7 @@
                         <br>
                         <br>
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <button type="cancle" class="btn btn-secondary">Back</button>
+                        <button type="button" class=" back btn btn-secondary">Back</button>
                     </form>
                 </div>
             </div>
@@ -56,6 +56,10 @@
 @endsection
 @section('custom-js')
 <script>
+
+$('.back').click(function () {
+    window.location.href="{{route('service.index')}}"
+})
 
     $(document).ready(function() {
         $(".m-select2").select2();
